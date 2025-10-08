@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core Earth Palette */
+    --background: 35 20% 98%;
+    --foreground: 140 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 140 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 20% 15%;
+
+    /* Primary - Forest Green */
+    --primary: 145 70% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 145 65% 55%;
+
+    /* Secondary - Rich Earth */
+    --secondary: 30 40% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted - Soft Neutrals */
+    --muted: 35 15% 92%;
+    --muted-foreground: 140 10% 40%;
+
+    /* Accent - Vibrant Lime */
+    --accent: 80 75% 55%;
+    --accent-foreground: 140 20% 15%;
+
+    /* Destructive */
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 145 70% 35%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(145 70% 35%), hsl(80 75% 55%));
+    --gradient-earth: linear-gradient(180deg, hsl(30 40% 45%), hsl(35 35% 60%));
+    --gradient-sky: linear-gradient(180deg, hsl(200 80% 70%), hsl(200 60% 85%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100% / 0.05), hsl(0 0% 100% / 0.02));
+
+    /* Shadows & Effects */
+    --shadow-elevated: 0 20px 40px -10px hsl(145 70% 35% / 0.15);
+    --shadow-glow: 0 0 30px hsl(80 75% 55% / 0.3);
+    --shadow-card: 0 4px 20px -2px hsl(140 20% 15% / 0.08);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Sidebar */
+    --sidebar-background: 140 25% 12%;
+    --sidebar-foreground: 35 20% 95%;
+    --sidebar-primary: 145 70% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 140 20% 18%;
+    --sidebar-accent-foreground: 35 20% 95%;
+    --sidebar-border: 140 15% 20%;
+    --sidebar-ring: 80 75% 55%;
+  }
+
+  .dark {
+    --background: 140 25% 8%;
+    --foreground: 35 20% 95%;
+
+    --card: 140 20% 12%;
+    --card-foreground: 35 20% 95%;
+
+    --popover: 140 20% 12%;
+    --popover-foreground: 35 20% 95%;
+
+    --primary: 145 65% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 145 70% 60%;
+
+    --secondary: 30 35% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 140 15% 18%;
+    --muted-foreground: 35 15% 65%;
+
+    --accent: 80 70% 50%;
+    --accent-foreground: 140 25% 8%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 15% 20%;
+    --input: 140 15% 20%;
+    --ring: 145 65% 45%;
+
+    --sidebar-background: 140 25% 12%;
+    --sidebar-foreground: 35 20% 95%;
+    --sidebar-primary: 145 70% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 140 20% 18%;
+    --sidebar-accent-foreground: 35 20% 95%;
+    --sidebar-border: 140 15% 20%;
+    --sidebar-ring: 80 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+
+  .gradient-sky {
+    background: var(--gradient-sky);
+  }
+
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

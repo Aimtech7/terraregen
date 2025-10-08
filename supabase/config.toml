@@ -1,0 +1,25 @@
+project_id = "izbvxoxhsmrqpgusxyoh"
+
+[functions.get-mapbox-token]
+verify_jwt = false
+
+[functions.fetch-environmental-data]
+verify_jwt = false
+
+[functions.analyze-soil]
+verify_jwt = true
+
+[functions.calculate-carbon]
+verify_jwt = true
+
+[functions.send-email-report]
+verify_jwt = true
+
+[functions.fetch-weather-forecast]
+verify_jwt = true
+
+[functions.fetch-kenya-data]
+verify_jwt = true
+
+[functions.generate-crop-insights]
+verify_jwt = true
