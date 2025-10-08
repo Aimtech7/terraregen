@@ -276,4 +276,4 @@ For partnerships, investments, or collaboration:
 
 📧 **Email:** austinemakwaka254@gmail.com  
 🌐 **Website (Coming Soon):** www.aimwell.ai  
-📱 **Phone/WhatsApp:** +254 XXX XXX XXX  
+📱 **Phone/WhatsApp:** +254 732 374 557  
